@@ -6,7 +6,7 @@
 ███████║╚██████╔╝██████╔╝███████╗ ╚████╔╝ ██║███████╗
 ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝╚══════╝
 #=====================================================
-#           Tool  Version : V 1.1.2
+#           Tool  Version : V 1.1.1
 #           Programmer    : EvilTwins
 #           Facebook      : @evi1.twins
 #           Github        : @Evi1-Back
@@ -55,7 +55,7 @@ parser.add_argument("--version",'-v',help="Show program's version number and exi
 parser.add_argument("--update",help="update SubEvil [Please update the tool every Saturday]",action='store_true')    
 args = parser.parse_args()
 #-----------------------------#
-versions = "V1.1.2"
+versions = "V1.1.1"
 def system():
     os.system('cls' if os.name == 'nt' else 'clear')
 #--------------------------#
