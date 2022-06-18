@@ -55,25 +55,27 @@ parser.add_argument("--version",'-v',help="Show program's version number and exi
 parser.add_argument("--update",help="update SubEvil [Please update the tool every Saturday]",action='store_true')    
 args = parser.parse_args()
 #-----------------------------#
-version = "V1.1.2"
+versions = "V1.1.2"
 def system():
     os.system('cls' if os.name == 'nt' else 'clear')
 #--------------------------#
 if args.version :
-    print(f"💯 SubEvil version {version}")
+    print(f"💯 SubEvil version {versions}")
     exit(0)
 if args.update:
-    os.system(f"python Update.py {version}")
+    os.system(f"python Update.py {versions}")
     exit(0)
 #---------------------------#
 system()
-print(Brand())
+print(Brand(versions))
 print(f"\n\n\n{fg(210)}This Tools 💞Help💞 🥷Penetration🥷Testers🥷 in Recon SubDomains For 💣Target💣 {attr(0)} [SubEvil] 💯💯")
 time.sleep(2)
 system()
-print(Brand())
+print(Brand(versions))
 #---------------------------#
 domains =  args.domains
+if domains == None:
+    exit(0)
 ListSubdomains = []
 print(f"{fg(1)}Target{attr(0)} 💣 {domains} 💣")
 #---------------------------#
