@@ -98,3 +98,9 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 > python3 SubEvil.py --update
 
 ![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/6.png)
+## after Update
+![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/7.png)
+## show version
+> python3 SubEvil.py -v
+
+![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/8.png)
