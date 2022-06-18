@@ -93,3 +93,8 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
     https://app.binaryedge.io/
     https://spyse.com
     https://securitytrails.com
+
+# Update SubEvil
+> python3 SubEvil.py --update
+
+![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/6.png)
