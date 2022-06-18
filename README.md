@@ -104,3 +104,9 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 > python3 SubEvil.py -v
 
 ![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/8.png)
+
+Telegram 
+[Evil_Twins_X](https://t.me/Evil_Twins_X)
+
+
+Facebook:[Evil.Twins](https://www.facebook.com/evi1.twins)
