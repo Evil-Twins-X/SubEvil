@@ -6,7 +6,6 @@ from  colored import fg,attr
 import time
 def system():
     os.system('cls' if os.name == 'nt' else 'clear')
-v = open(".ver").read()
 def update(version=sys.argv[1]):
     CheckUpdate = "https://raw.githubusercontent.com/Evil-Twins-X/MyToolsUpdate/main/SubEvil.txt"
     req = requests.get(url=CheckUpdate).text
