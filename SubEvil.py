@@ -55,7 +55,7 @@ parser.add_argument("--version",'-v',help="Show program's version number and exi
 parser.add_argument("--update",help="update SubEvil [Please update the tool every Saturday]",action='store_true')    
 args = parser.parse_args()
 #-----------------------------#
-version = "V1.1.1"
+version = "V1.1.2"
 def system():
     os.system('cls' if os.name == 'nt' else 'clear')
 #--------------------------#
