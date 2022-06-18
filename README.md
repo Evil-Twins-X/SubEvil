@@ -80,3 +80,16 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 # How can I add the value of the API?
 > Go to Lib Open Confger.py Add Api Value Here
 ![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/5.png)
+
+    https://developer.shodan.io/api/requirements
+    https://whois.whoisxmlapi.com/documentation/generate-new-api-key
+    https://sslmate.com/certspotter/
+    https://www.farsightsecurity.com/trial-api/
+    https://virustotal.com/
+    https://recon.dev
+    https://api.riskiq.net/api/pt_started.html
+    https://censys.io/
+    https://developers.facebook.com/docs/facebook-login/guides/access-tokens
+    https://app.binaryedge.io/
+    https://spyse.com
+    https://securitytrails.com
