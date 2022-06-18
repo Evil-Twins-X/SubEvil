@@ -23,14 +23,8 @@ def update(version=sys.argv[1]):
                     pass
                 textfile =requests.get(urlGetupdate).text
                 open(f"{i}",'a').write(textfile)
-        for x in req:
-            if "V" in req:
-                    os.remove(".ver")
-                    open(".ver",'a').write(x)
-                    break
-
 system()
-print(Brand())
+print(Brand(sys.argv[1]))
 print("Wite Check For Update ")
 print(f"\n\n\n{fg(210)}This Tools 💞Help💞 🥷Penetration🥷Testers🥷 in Recon SubDomains For 💣Target💣 {attr(0)} [SubEvil] 💯💯")
 update()
