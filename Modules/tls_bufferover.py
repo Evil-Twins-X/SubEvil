@@ -18,7 +18,7 @@ from Lib.userAgent import useragent
 """
 def tls_bufferover(Domains,useragent=useragent()):
     subdomains = []
-    response = requests.get(f"https://tls.bufferover.run/dns?q=.{Domains}", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://tls.bufferover.run/dns?q=.{Domains}", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = json.loads(response.text)
     for line in data["Results"]:
         sub = line.split(",")[2]

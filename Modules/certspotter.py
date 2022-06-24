@@ -19,7 +19,7 @@ from Lib.Configer import *
 def certspotter(Domains,useragent=useragent()):
     headers = {"Authorization": f"Bearer {certspotter_api_key}",'User-Agent':useragent}
     response = requests.get(f"https://api.certspotter.com/v1/issuances?domain={Domains}&expand=dns_names",
-                            headers=headers, stream=True ,verify=True)
+                            headers=headers, stream=True ,verify=True,timeout=15)
     subdomains = []
     data = json.loads(response.text)
     for dns_names in data:

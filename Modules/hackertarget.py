@@ -20,7 +20,7 @@ from Lib.userAgent import useragent
 def hackertarget(Domains,useragent=useragent()):
     try:
         url = f"https://api.hackertarget.com/hostsearch/?q={Domains}"
-        req = requests.get(url=url,verify=True,headers={"User-Agent":useragent})
+        req = requests.get(url=url,verify=True,headers={"User-Agent":useragent},timeout=15)
         if Domains in req.text:
             resp = req.text
             s = []

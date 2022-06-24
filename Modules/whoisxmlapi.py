@@ -22,7 +22,7 @@ def whoisxmlapi(Domains,useragent=useragent()):
     subdomains = []
     response = requests.get(
         f"https://subdomains.whoisxmlapi.com/api/v1?apiKey={whoisxmlapi_api_key}&domainName={Domains}", 
-        stream=True,verify=True,headers={"User-Agent":useragent})
+        stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = json.loads(response.text)
     for res in data["result"]["records"]:
         sub = res["domain"]

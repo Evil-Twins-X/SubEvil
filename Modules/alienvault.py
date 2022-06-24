@@ -20,7 +20,7 @@ from Lib.userAgent import useragent
 def alienvault(Domains,useragent=useragent()):
     try:
         url = f"https://otx.alienvault.com/api/v1/indicators/domain/{Domains}/passive_dns"
-        req = requests.get(url=url,verify=True,headers={"User-Agent":useragent})
+        req = requests.get(url=url,verify=True,headers={"User-Agent":useragent},timeout=15)
         if Domains in req.json():
             resp = req.json()['passive_dns']['hostname']
             return resp

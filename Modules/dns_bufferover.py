@@ -18,7 +18,7 @@ from Lib.userAgent import useragent
 """
 def dns_bufferover(Domains,useragent=useragent()):
     subdomains = []
-    response = requests.get(f"https://dns.bufferover.run/dns?q=.{domain}", stream=True,verify=True,headers={'User-Agent':useragent})
+    response = requests.get(f"https://dns.bufferover.run/dns?q=.{Domains}", stream=True,verify=True,headers={'User-Agent':useragent},timeout=15)
     data = json.loads(response.text)
     for line in data["FDNS_A"]:
         sub = line.split(",")[1]

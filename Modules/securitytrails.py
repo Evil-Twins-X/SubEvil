@@ -22,7 +22,7 @@ def securitytrails(Domains,useragent=useragent()):
     subdomains = []
     headers = {"apikey": securitytrails_API,"User-Agent":useragent}
     response = requests.get(f"https://api.securitytrails.com/v1/domain/{Domains}/subdomains",
-                            headers=headers, stream=True)
+                            headers=headers, stream=True,timeout=15)
     data = json.loads(response.text)
     for sub in data["subdomains"]:
         if not subdomains.__contains__(sub + "." + Domains):

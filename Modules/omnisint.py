@@ -17,7 +17,7 @@ from Lib.userAgent import useragent
 #======================================================
 """
 def omnisint(Domains,useragent=useragent()):
-    response = requests.get(f"https://sonar.omnisint.io/subdomains/{Domains}", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://sonar.omnisint.io/subdomains/{Domains}", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     subdomains =[]
     data = json.loads(response.text)
     if response.status_code =="200":

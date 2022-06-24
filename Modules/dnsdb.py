@@ -22,7 +22,7 @@ def dnsdb(Domains,useragent=useragent()):
     subdomains = []
     headers = {"Accept": "application/json", "Content-Type": "application/json", "X-API-Key": dnsdb_api_key,"User-Agent":useragent}
     response = requests.get(f"https://api.dnsdb.info/lookup/rrset/name/*.{Domains}?limit=1000000000",
-                            headers=headers, stream=True,verify=True)
+                            headers=headers, stream=True,verify=True,timeout=15)
     for line in response.text.split("\n"):
         if line == "":
             continue

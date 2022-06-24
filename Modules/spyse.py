@@ -23,6 +23,6 @@ def spyse(Domains,useragent=useragent()):
 
     headers = {'Authorization': f'Bearer {spyse_api_key}',"User-Agent":useragent}
     response = requests.get(f"https://api.spyse.com/v3/data/domain/subdomain?domain={Domains}",
-                            headers=headers, stream=True,verify=True)
+                            headers=headers, stream=True,verify=True,timeout=15)
     data = json.loads(response.text)
     return data

@@ -20,7 +20,7 @@ from Lib.userAgent import useragent
 
 def urlscan(Domains,useragent=useragent()):
     subdomains =  []
-    response = requests.get(f"https://urlscan.io/api/v1/search/?q=domain:{Domains}", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://urlscan.io/api/v1/search/?q=domain:{Domains}", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = json.loads(response.text)
     for res in data["results"]:
         if not subdomains.__contains__(res["page"]["domain"]):

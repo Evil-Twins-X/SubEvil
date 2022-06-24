@@ -12,6 +12,7 @@
 #           Github        : @Evi1-Back
 #======================================================
 """
+import http
 from Modules.alienvault import alienvault
 from Modules.anubis import anubis
 from Modules.binaryedge import binaryedge
@@ -38,6 +39,8 @@ from Modules.whoisxmlapi import whoisxmlapi
 from Modules.recondev import recondev
 #-----------------------------#
 from Lib.Brand import *
+from Lib.HttpORHttps import Http
+from Lib.HttpORHttps import Https
 #-----------------------------#
 from colored import fg,attr
 import time
@@ -47,13 +50,17 @@ import argparse
 import threading
 from multiprocessing import Pool
 import argparse
-versions = "V1.1.1"
+versions = "V1.1.2"
 print(Brand(versions))
 #------------------------------#
 parser = argparse.ArgumentParser()
 parser.add_argument('--domains','-d', type=str,help="Domain name to enumerate it's subdomains")
 parser.add_argument("--random-agent",'-ra',help="Use randomly selected HTTP User-Agent header value",action='store_true')
 parser.add_argument("--version",'-v',help="Show program's version number and exit",action='store_true')
+parser.add_argument("--http-only","-http",help="Test Domains Ony HTTP",action='store_true')
+parser.add_argument("--https-only","-https",help="Test Domains Ony HTTPS",action='store_true')
+parser.add_argument("--status-code",'-sc',type=str,help="display response status-code --status-code All or 200 or 404 or 303 etc.." )
+parser.add_argument("--title",'-t',help="display page title",action='store_true')
 parser.add_argument("--update",help="update SubEvil [Please update the tool every Saturday]",action='store_true')    
 args = parser.parse_args()
 #-----------------------------#
@@ -79,6 +86,15 @@ if domains == None:
     exit(0)
 ListSubdomains = []
 print(f"{fg(1)}Target{attr(0)} 💣 {domains} 💣")
+if args.http_only and args.https_only:
+    print(f"{fg(1)} \n      You Cannot Use --http-only And --https-Only must choose only one")
+    exit(0)
+if args.status_code or args.title:
+    if args.https_only or args.http_only:
+        pass
+    else:
+        print(f"{fg(1)}         You cannot use --title  or  --status-code without using  --https-Only or  --http-Only")
+        exit(0)
 #---------------------------#
 def addDomainsAlienvault():
     try:
@@ -86,6 +102,14 @@ def addDomainsAlienvault():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -96,6 +120,14 @@ def addDomainsAnubis():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -106,6 +138,14 @@ def addDomainsBinaryedge():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -116,6 +156,14 @@ def addDomainsCensys():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -126,6 +174,14 @@ def addDomainsCertspotter():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -136,6 +192,14 @@ def addDomainsCrt():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -146,6 +210,14 @@ def addDomainsDns_bufferover():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -156,6 +228,14 @@ def addDomainsDnsdb():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -166,6 +246,14 @@ def addDomainsFacebook():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -176,6 +264,14 @@ def addDomainsHackertarget():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -186,6 +282,14 @@ def addDomainsOmnisint():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -196,6 +300,14 @@ def addDomainsPassivetotal():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -206,6 +318,14 @@ def addDomainsRiddler():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -216,6 +336,14 @@ def addDomainsSecuritytrails():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -226,6 +354,14 @@ def addDomainsShodan():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -236,6 +372,14 @@ def addDomainsSpyse():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -246,6 +390,14 @@ def addDomainsSublist3r():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -256,6 +408,14 @@ def addDomainsThreatcrowd():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -266,6 +426,14 @@ def addDomainsThreatminer():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -276,6 +444,14 @@ def addDomainsTls_bufferover():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -286,6 +462,14 @@ def addDomainsUrlscan():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -296,6 +480,14 @@ def addDomainsVirustotal():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -306,6 +498,14 @@ def addDomainsWhoisxmlapi():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass
             else:
                 pass
     except:
@@ -316,6 +516,14 @@ def addDomainsRecondev():
         for i in th:
             if not ListSubdomains.__contains__(i):
                 ListSubdomains.append(i)
+                if domains in i:
+                    if "," in i:
+                        s = i.split(",")[0]
+                        print(s)
+                    else:
+                        print(i)
+                else:
+                    pass               
             else:
                 pass
     except:
@@ -351,13 +559,42 @@ def Start():
     for i in ListSubdomains:
         if domains in i:
             N+=1
-            if "," in i:
-                s = i.split(",")[0]
-                print(s)
-            else:
-                print(i)
         else:
             pass
     print(f"{fg(8)}Subdomains Fund{attr(0)} [{N}]")
-
 Start()
+if args.http_only:
+    httponly = True
+else:
+    httponly = False
+if args.https_only:
+    httpsonly = True
+else:
+    httpsonly = False
+if args.status_code:
+    status_code =  args.status_code
+else:
+    status_code = False
+if args.title:
+    title = True
+else:
+    title = False
+def http_(Target):
+    Http(Target=Target,HTTP=httponly,Title=title,StatusCode=f"{status_code}")
+def https_(Target):
+    Https(Target=Target,HTTPs=httpsonly,Title=title,StatusCode=f"{status_code}")
+
+if args.http_only:
+    pool = Pool(120)
+    pool.map(http_,ListSubdomains)
+    pool.close()
+    pool.join()
+else:
+    pass
+if args.https_only:
+    pool = Pool(120)
+    pool.map(https_,ListSubdomains)
+    pool.close()
+    pool.join()
+else:
+    pass

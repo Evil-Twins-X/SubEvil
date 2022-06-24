@@ -25,7 +25,7 @@ def censys(Domain,useragent=useragent()):
         auth = (censys_api_id, censys_api_secret)
         data = {"query": Domain, "page": page, "fields": ["parsed.names"]}
         response = requests.post("https://www.censys.io/api/v1/search/certificates",
-                                 headers=headers, json=data, auth=auth, stream=True)
+                                 headers=headers, json=data, auth=auth, stream=True,timeout=15)
         data = json.loads(response.text)
         pages = data["metadata"]["pages"]
         for res in data["results"]:

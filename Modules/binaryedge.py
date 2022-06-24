@@ -24,7 +24,7 @@ def binaryedge(Domains,useragent=useragent()):
     while page <= pages:
         headers = {"X-Key": binaryedge_api_key,"User-Agent":useragent}
         response = requests.get(f"https://api.binaryedge.io/v2/query/domains/subdomain/{Domains}?page={page}",
-                                headers=headers, stream=True,verify=True)
+                                headers=headers, stream=True,verify=True,timeout=15)
         data = json.loads(response.text)
         pages = data["pagesize"]
         for sub in data["events"]:

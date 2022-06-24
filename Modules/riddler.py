@@ -20,7 +20,7 @@ from Lib.userAgent import useragent
 
 def riddler(Domains,useragent=useragent()):
     subdomains = []
-    response = requests.get(f"https://riddler.io/search/exportcsv?q=pld:{Domains}", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://riddler.io/search/exportcsv?q=pld:{Domains}", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = csv.reader(line.decode('utf-8') for line in response.iter_lines())
     next(data)
     next(data)

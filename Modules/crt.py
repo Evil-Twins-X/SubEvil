@@ -20,7 +20,7 @@ from Lib.userAgent import useragent
 
 def crt(Domains,useragent=useragent()):
     subdomains = []
-    response = requests.get(f"https://crt.sh/?q={Domains}&output=json", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://crt.sh/?q={Domains}&output=json", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = json.loads(response.text)
     for res in data:
         for sub in res["name_value"].split("\n"):

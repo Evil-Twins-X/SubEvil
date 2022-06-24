@@ -19,7 +19,7 @@ from Lib.userAgent import useragent
 
 def sublist3r(Domains,useragent=useragent()):
     subdomains = []
-    response = requests.get(f"https://api.sublist3r.com/search.php?domain={Domains}", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://api.sublist3r.com/search.php?domain={Domains}", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = json.loads(response.text)
     for sub in data:
         if not subdomains.__contains__(sub):

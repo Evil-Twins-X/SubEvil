@@ -19,7 +19,7 @@ from Lib.userAgent import useragent
 
 def threatcrowd(Domains,useragent=useragent()):
     subdomains = []
-    response = requests.get(f"https://www.threatcrowd.org/searchApi/v2/domain/report/?domain={Domains}", stream=True,verify=True,headers={"User-Agent":useragent})
+    response = requests.get(f"https://www.threatcrowd.org/searchApi/v2/domain/report/?domain={Domains}", stream=True,verify=True,headers={"User-Agent":useragent},timeout=15)
     data = json.loads(response.text)
     for sub in data["subdomains"]:
         if not subdomains._n_cotains__(sub):
