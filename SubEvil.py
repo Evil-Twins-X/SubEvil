@@ -580,9 +580,9 @@ if args.title:
 else:
     title = False
 def http_(Target):
-    Http(Target=Target,HTTP=httponly,Title=title,StatusCode=f"{status_code}")
+    Http(Target=Target,HTTP=httponly,Title=title,StatusCode=status_code)
 def https_(Target):
-    Https(Target=Target,HTTPs=httpsonly,Title=title,StatusCode=f"{status_code}")
+    Https(Target=Target,HTTPs=httpsonly,Title=title,StatusCode=status_code)
 
 if args.http_only:
     pool = Pool(120)
