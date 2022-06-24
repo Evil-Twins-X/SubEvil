@@ -1,5 +1,5 @@
 ### (SubEvil)--> Subdomain Enumeration     (❗❗Please update the tool every Saturday❗❗)
-![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/1.png)
+![SubEvil](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/1.png)
 
                     ┌──(evil-word㉿Evil-Word)-[~/Desktop/MyProcejt/Python/SubEvil]
                     └─$ python3 SubEvil.py -h
@@ -64,9 +64,13 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 
 | Short Form | Form | Description |
 | ------------- | ------------- |--------|
-| -d|--domains|Domain name to enumerate it's subdomains|
+|-d|--domains|Domain name to enumerate it's subdomains|
 |-ra  |--random-agent  |Use randomly selected HTTP User-Agent header value|
 |-v |--version|Show program's version number and exit|
+|-http|--http-only|Test Domains Ony HTTP #Updata V1.1.2|
+|-https  |--https-only  |Test Domains Ony HTTPS #Updata V1.1.2|
+|-sc |--status-code|display response status-code --status-code All or 200 or 404 or 303 etc.. #Updata V1.1.2|
+|-t|--title|display page title #Updata V1.1.2|
 |-up|--update|update SubEvil [Please update the tool every Saturday]
 # Usage
 `Python3 SubEvil.py -d facebook.com -ra`
@@ -105,7 +109,70 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 
 ![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/8.png)
 
+
+# ✅🔨Update {2020-7-24}🔨✅
+┌──(root㉿Evil-Word)-[/home/…/Python/SubEvil/update/V1.1.1]
+
+└─# python3 SubEvil.py --update
+
+
+![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/10.png)
+
+┌──(root㉿Evil-Word)-[/home/…/Python/SubEvil/update/V1.1.1]
+
+└─# python3 SubEvil.py -v
+
+![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/9.png)
+
+┌──(root㉿Evil-Word)-[/home/…/Python/SubEvil/update/V1.1.1]
+
+└─# python3 SubEvil.py -h # Or --help
+
+![This is an image](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/11.png)
+
+# After Update ➕➕ argparse ➕➕
+
+| Short Form | Form | Description |
+| ------------- | ------------- |--------|
+| -http|--http-only|Test Domains Ony HTTP|
+|-https  |--https-only  |Test Domains Ony HTTPS|
+|-sc |--status-code|display response status-code --status-code All or 200 or 404 or 303 etc..|
+|-t|--title|display page title]|
+
+# Usage
+
+> python3 SubEvil.py --domain facebook.com --random-agent --http-only 
+
+![python3 SubEvil.py --domain facebook.com --random-agent --http-only](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/12.png)
+
+> python3 SubEvil.py --domain facebook.com --random-agent --https-only 
+
+![python3 SubEvil.py --domain facebook.com --random-agent --https-only ](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/13.png)
+
+
+> python3 SubEvil.py --domain facebook.com --random-agent --https-only  --status-code 200
+
+![python3 SubEvil.py --domain facebook.com --random-agent --https-only  --status-code 200](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/14.png)
+
+> python3 SubEvil.py --domain facebook.com --random-agent --https-only  --status-code 400,403,404
+
+![python3 SubEvil.py --domain facebook.com --random-agent --https-only  --status-code 400,403,404](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/15.png)
+
+> python3 SubEvil.py --domain facebook.com --random-agent --https-only  --status-code all #or All
+
+![python3 SubEvil.py --domain facebook.com --random-agent --https-only  --status-code all #or All](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/16.png)
+
+> python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title
+
+![python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/17.png)
+
+> python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title --status-code All
+
+![ python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title --status-code All](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/18.png)
+
+
 Telegram 
+
 [Evil_Twins_X](https://t.me/Evil_Twins_X)
 
 
