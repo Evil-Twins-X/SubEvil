@@ -561,7 +561,7 @@ def Start():
             N+=1
         else:
             pass
-    print(f"{fg(8)}Subdomains Fund{attr(0)} [{N}]")
+    print(f"{fg(8)}Subdomains Found{attr(0)} [{N}]")
 Start()
 if args.http_only:
     httponly = True
