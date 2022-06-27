@@ -106,7 +106,7 @@ def Http(Target,HTTP,Title,StatusCode):
 
 def Https(Target,HTTPs,Title,StatusCode):
     try:
-        if HTTP   == True:
+        if HTTPs   == True:
             url = f"https://{Target}"
             req =requests.get(url,timeout=5)
             Pro = []
