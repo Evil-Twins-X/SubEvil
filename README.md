@@ -176,4 +176,4 @@ Telegram
 [Evil_Twins_X](https://t.me/Evil_Twins_X)
 
 
-Facebook:[Evil.Twins](https://www.facebook.com/evi1.twins)
+Facebook:[Evil.Twins](https://www.facebook.com/PS0Xx)
