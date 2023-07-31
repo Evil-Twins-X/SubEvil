@@ -4,29 +4,36 @@
                     ┌──(evil-word㉿Evil-Word)-[~/Desktop/MyProcejt/Python/SubEvil]
                     └─$ python3 SubEvil.py -h
 
-    
-                    ███████╗██╗   ██╗██████╗ ███████╗██╗   ██╗██╗██╗     
-                    ██╔════╝██║   ██║██╔══██╗██╔════╝██║   ██║██║██║     
-                    ███████╗██║   ██║██████╔╝█████╗  ██║   ██║██║██║     
-                    ╚════██║██║   ██║██╔══██╗██╔══╝  ╚██╗ ██╔╝██║██║     
+                    ███████╗██╗   ██╗██████╗ ███████╗██╗   ██╗██╗██╗
+                    ██╔════╝██║   ██║██╔══██╗██╔════╝██║   ██║██║██║
+                    ███████╗██║   ██║██████╔╝█████╗  ██║   ██║██║██║
+                    ╚════██║██║   ██║██╔══██╗██╔══╝  ╚██╗ ██╔╝██║██║
                     ███████║╚██████╔╝██████╔╝███████╗ ╚████╔╝ ██║███████╗
                     ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝╚══════╝
                  #=====================================================#
-                 #           Tool  Version : V 1.0                     #
+                 #           Tool  Version : V2.1.1                    #
                  #           Programmer    : EvilTwins                 #
                  #           Facebook      : @evi1.twins               #
-                 #           Github        : @Evi1-Back                #
+                 #           Github        : @Evil-Twins-X             #
                  #=====================================================#
-    
-                  usage: SubEvil.py [-h] [--domains DOMAINS] [--random-agent] [--version] [--update]
 
-                  options:
-                    -h, --help            show this help message and exit
-                    --domains DOMAINS, -d DOMAINS
-                                          Domain name to enumerate it's subdomains
-                    --random-agent, -ra   Use randomly selected HTTP User-Agent header value
-                    --version, -v         Show program's version number and exit
-                    --update              update SubEvil [Please update the tool every Saturday]
+              usage: SubEvil.py [-h] [--domains DOMAINS] [--port-scan PORT_SCAN] [--random-agent] [--version] [--http-only] [--https-only]
+                                [--status-code STATUS_CODE] [--title] [--update]
+              
+              options:
+                -h, --help            show this help message and exit
+                --domains DOMAINS, -d DOMAINS
+                                      Domain name to enumerate it's subdomains
+                --port-scan PORT_SCAN, -p PORT_SCAN
+                                      Scan Port Open Ex.. --port-scan 80,443,21,8080,8443
+                --random-agent, -ra   Use randomly selected HTTP User-Agent header value
+                --version, -v         Show program's version number and exit
+                --http-only, -http    Test Domains Ony HTTP
+                --https-only, -https  Test Domains Ony HTTPS
+                --status-code STATUS_CODE, -sc STATUS_CODE
+                                      display response status-code --status-code All or 200 or 404 or 303 etc..
+                --title, -t           display page title
+                --update              update SubEvil [Please update the tool every Saturday]
                     
  
 ### SubEvil 
