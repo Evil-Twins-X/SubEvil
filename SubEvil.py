@@ -12,6 +12,7 @@
 #           Github        : @Evi1-Back
 #======================================================
 """
+from ast import For
 import http
 from Modules.alienvault import alienvault
 from Modules.anubis import anubis
@@ -41,8 +42,9 @@ from Modules.recondev import recondev
 from Lib.Brand import *
 from Lib.HttpORHttps import Http
 from Lib.HttpORHttps import Https
+from Lib.PortScanner import scan_port
 #-----------------------------#
-from colored import fg,attr
+from colored import Style , Fore
 import time
 import sys
 import os
@@ -50,11 +52,12 @@ import argparse
 import threading
 from multiprocessing import Pool
 import argparse
-versions = "V1.1.2"
+versions = "V2.1.1"
 print(Brand(versions))
 #------------------------------#
 parser = argparse.ArgumentParser()
 parser.add_argument('--domains','-d', type=str,help="Domain name to enumerate it's subdomains")
+parser.add_argument("--port-scan",'-p',type=str,help="  " )
 parser.add_argument("--random-agent",'-ra',help="Use randomly selected HTTP User-Agent header value",action='store_true')
 parser.add_argument("--version",'-v',help="Show program's version number and exit",action='store_true')
 parser.add_argument("--http-only","-http",help="Test Domains Ony HTTP",action='store_true')
@@ -76,7 +79,7 @@ if args.update:
 #---------------------------#
 system()
 print(Brand(versions))
-print(f"\n\n\n{fg(210)}This Tools 💞Help💞 🥷Penetration🥷Testers🥷 in Recon SubDomains For 💣Target💣 {attr(0)} [SubEvil] 💯💯")
+print(f"\n\n\n{Fore.blue}This Tools 💞Help💞 🥷Penetration🥷Testers🥷 in Recon SubDomains For 💣Target💣 {Style.reset} [{Fore.green}SubEvil{Style.reset}] 💯💯")
 time.sleep(2)
 system()
 print(Brand(versions))
@@ -85,15 +88,15 @@ domains =  args.domains
 if domains == None:
     exit(0)
 ListSubdomains = []
-print(f"{fg(1)}Target{attr(0)} 💣 {domains} 💣")
+print(f"{Fore.red}Target{Style.reset} 💣 {domains} 💣")
 if args.http_only and args.https_only:
-    print(f"{fg(1)} \n      You Cannot Use --http-only And --https-Only must choose only one")
+    print(f"{Fore.red} \n      You Cannot Use --http-only And --https-Only must choose only one")
     exit(0)
 if args.status_code or args.title:
     if args.https_only or args.http_only:
         pass
     else:
-        print(f"{fg(1)}         You cannot use --title  or  --status-code without using  --https-Only or  --http-Only")
+        print(f"{Fore.red}         You cannot use --title  or  --status-code without using  --https-Only or  --http-Only")
         exit(0)
 #---------------------------#
 def addDomainsAlienvault():
@@ -561,7 +564,7 @@ def Start():
             N+=1
         else:
             pass
-    print(f"{fg(8)}Subdomains Fund{attr(0)} [{N}]")
+    print(f"{Fore.blue}Subdomains Fund{Style.reset} [{N}]")
 Start()
 if args.http_only:
     httponly = True
@@ -583,7 +586,6 @@ def http_(Target):
     Http(Target=Target,HTTP=httponly,Title=title,StatusCode=status_code)
 def https_(Target):
     Https(Target=Target,HTTPs=httpsonly,Title=title,StatusCode=status_code)
-
 if args.http_only:
     pool = Pool(120)
     pool.map(http_,ListSubdomains)
@@ -598,3 +600,11 @@ if args.https_only:
     pool.join()
 else:
     pass
+if args.port_scan:
+    data = []
+    for i in ListSubdomains:
+        data.append(f'{i}:{args.port_scan}')
+    pool = Pool(40)
+    pool.map(scan_port, data)
+    pool.close()
+    pool.join()
