@@ -65,6 +65,7 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 | Short Form | Form | Description |
 | ------------- | ------------- |--------|
 |-d|--domains|Domain name to enumerate it's subdomains|
+| -p|--port-scan|Scan Port Open  Ex.. --port-scan 80,443,21,8080,8443|
 |-ra  |--random-agent  |Use randomly selected HTTP User-Agent header value|
 |-v |--version|Show program's version number and exit|
 |-http|--http-only|Test Domains Ony HTTP #Updata V1.1.2|
@@ -169,6 +170,23 @@ It is a tool programmed in Python language to detect multiple subdomains of a we
 > python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title --status-code All
 
 ![ python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title --status-code All](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/18.png)
+
+# ✅🔨Update {2023-7-31}🔨✅
+┌──(root㉿Evil-Word)-[/home/…/Python/SubEvil/update/V1.1.1]
+
+└─# python3 SubEvil.py --update
+
+
+# After Update ➕➕ argparse ➕➕
+
+| Short Form | Form | Description |
+| ------------- | ------------- |--------|
+| -p|--port-scan|Scan Port Open  Ex.. --port-scan 80,443,21,8080,8443|
+
+# Usage
+> python3 SubEvil.py --domain facebook.com --random-agent --port-scan 80,443,8080,21,53
+![ python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title --status-code All](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/PortScan.PNG)
+![ python3 SubEvil.py --domain facebook.com --random-agent --https-only  --title --status-code All](https://github.com/Evil-Twins-X/SubEvil/blob/main/screenShot/PortScan2.PNG)
 
 
 Telegram 
